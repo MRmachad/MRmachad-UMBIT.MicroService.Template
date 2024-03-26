@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <UserSecretsId>054db232-4428-44b6-8897-4dd9dc85a31a</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+    <RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>True</RunAnalyzersDuringLiveAnalysis>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="AppConfigurate\Config.Template.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UMBIT.MicroService.Template.Contract\UMBIT.MicroService.Template.Contract.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AppConfigurate\" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="'$(Configuration)' == 'Debug'">
+    <Exec Command=" call .\settings\BatchSubstitute.bat .\settings\template.json .\settings\config.json REPLACE_NameSolutionService $(SolutionName)&#xD;&#xA; call .\settings\BatchSubstitute.bat .\settings\config.json .\settings\config.json REPLACE_DirectorySolutionService $(SolutionDir) &#xD;&#xA; call .\settings\BatchSubstitute.bat .\settings\config.json .\settings\config.json REPLACE_DirectoryProjectService $(ProjectDir)&#xD;&#xA; call .\settings\BatchSubstitute.bat .\settings\config.json .\settings\config.json \ \\" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Debug'">
+    <Exec Command="echo S | rmdir &quot;%25NET8_API%25\services\$(ProjectName)&quot; /s &#xD;&#xA;xcopy /s /y .\settings\config.json &quot;%25NET8_API%25\services\$(ProjectName)\&quot;" />
+  </Target>
+
+</Project>

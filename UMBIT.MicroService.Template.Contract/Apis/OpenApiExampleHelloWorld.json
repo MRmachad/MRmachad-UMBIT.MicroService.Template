@@ -1,0 +1,53 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "UMBIT.MicroService.Template.API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/HelloWorld": {
+      "get": {
+        "tags": [
+          "HelloWorld"
+        ],
+        "operationId": "GetHelloWorld",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelloWorldString"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelloWorldString"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelloWorldString"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HelloWorldString": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

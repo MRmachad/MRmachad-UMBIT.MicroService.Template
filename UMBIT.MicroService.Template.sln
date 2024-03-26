@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UMBIT.MicroService.Template.API", "UMBIT.MicroService.Template.API\UMBIT.MicroService.Template.API.csproj", "{20ECB182-5186-4900-852B-B3B83B2A788D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{630C5442-A5F2-436A-B315-36DB9A3159F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contract", "Contract", "{CEE87004-F165-4EC1-84F7-0B399D9367DB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UMBIT.MicroService.Template.Contract", "UMBIT.MicroService.Template.Contract\UMBIT.MicroService.Template.Contract.csproj", "{4E17A7E4-21B3-4D46-9F79-F612B91DF19B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20ECB182-5186-4900-852B-B3B83B2A788D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20ECB182-5186-4900-852B-B3B83B2A788D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20ECB182-5186-4900-852B-B3B83B2A788D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20ECB182-5186-4900-852B-B3B83B2A788D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E17A7E4-21B3-4D46-9F79-F612B91DF19B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E17A7E4-21B3-4D46-9F79-F612B91DF19B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E17A7E4-21B3-4D46-9F79-F612B91DF19B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E17A7E4-21B3-4D46-9F79-F612B91DF19B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{20ECB182-5186-4900-852B-B3B83B2A788D} = {630C5442-A5F2-436A-B315-36DB9A3159F2}
+		{4E17A7E4-21B3-4D46-9F79-F612B91DF19B} = {CEE87004-F165-4EC1-84F7-0B399D9367DB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8397CE0-AD70-4C82-A269-CD8BBD6A7A8A}
+	EndGlobalSection
+EndGlobal
